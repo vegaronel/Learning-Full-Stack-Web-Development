@@ -8,6 +8,7 @@ import bodyParser from "body-parser";
 import {dirname} from "path";
 import { fileURLToPath } from "url";
 
+
 const app = express();
 const port = 3000;
 var password = ""
@@ -15,16 +16,22 @@ var userIsAuthorised = false;
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
+
 app.use(bodyParser.urlencoded({extended:true}));
 
+
 function checkPassword(req, res, next){
-    console.log(req.body);
+    
     password = req.body["password"];
 
-    if(password === "ILoveProgramming"){
+    if(password === "123456"){
+        console.log("Password is correct")
        userIsAuthorised = true;
+    }else{
+        console.log("Wrong password");
+        userIsAuthorised = false;
     }
-    next();
+next();
 }
 
 app.get("/", (req, res)=>{
