@@ -23,7 +23,7 @@ app.post("/submit", (req, res)=>{
     
     fs.writeFile("result.txt", result , (err) => {
       if (err) throw err;
-      console.log('The file has been saved!');
+      console.log('The file has been saved');
       res.render("index.ejs", {output:result});
       
     }); 
