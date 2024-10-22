@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capstone - API</title>
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <form action="/search" method="post">
+            <input type="text" name="searchText">
+            <button type="submit">Search</button>
+        </form>
+        <div id="animeSection">
+            <% if(locals.animeData) { %>
+                <%- animeData %>
+            <% } %>
+        </div>
+    </div>
+</body>
+</html>
